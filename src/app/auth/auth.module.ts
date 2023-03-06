@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,7 +9,6 @@ import { StoreModule } from '@ngrx/store';
 import * as fromAuth from './store/auth.reducer';
 import { AuthService } from './service/auth-service.service';
 import { SignupComponent } from './components/signup/signup.component';
-import { AuthGuard } from './guards/auth.guard';
 import { SharedModule } from '../shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/auth.effects';
@@ -44,15 +43,9 @@ const routes: Routes = [
     MatButtonModule,
     MatInputModule,
     StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.authReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forFeature([AuthEffects]),
     SharedModule,
   ],
+  providers: [AuthService],
 })
-export class AuthModule {
-  static forRoot(): ModuleWithProviders<any> {
-    return {
-      ngModule: AuthModule,
-      providers: [AuthService, AuthGuard],
-    };
-  }
-}
+export class AuthModule {}

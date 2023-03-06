@@ -1,3 +1,9 @@
 <div class="container">
    <div class="title"><h1> Welcome to S-Bucket</h1></div>
+   <ul>
+      <li *ngFor="let product of products$| async; index as i">
+         {{ i + 1 }}. {{ product['Name'] }}
+      </li>
+   </ul>
 </div>
+
