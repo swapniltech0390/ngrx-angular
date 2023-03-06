@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { LoginResponse, SignupResponse, User } from '../models/user.model';
 import userMock from '../../mocks/users.json';
