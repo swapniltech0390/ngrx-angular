@@ -7,6 +7,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductEffects } from './store';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductsService } from './service/products.service';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -19,6 +20,7 @@ import { ProductsService } from './service/products.service';
       fromProducts.productReducer
     ),
     EffectsModule.forFeature([ProductEffects]),
+    MatTableModule,
   ],
   providers: [ProductsService],
 })

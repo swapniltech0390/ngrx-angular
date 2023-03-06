@@ -9,11 +9,17 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  products$: Observable<[]> = new Observable<[]>();
+  dataSource$: Observable<[]> = new Observable<[]>();
+  displayedColumns: string[] = [
+    'Product ID',
+    'Name',
+    'Description',
+    'Date Created',
+  ];
   constructor(private store: Store<ProductState>) {}
 
   ngOnInit(): void {
     this.store.dispatch(ProductActions.product());
-    this.products$ = this.store.select(productList);
+    this.dataSource$ = this.store.select(productList);
   }
 }
