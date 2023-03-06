@@ -6,18 +6,16 @@ export enum ProductAction {
   PRODUCT_FAILED = '[PRODUCT Page] Product Failed',
 }
 
-const product = createAction(
-  ProductAction.PRODUCT
-);
+const product = createAction(ProductAction.PRODUCT);
 
 const product_success = createAction(
   ProductAction.PRODUCT_SUCCESS,
-  props<{ product:any }>()
+  props<{ product: any }>()
 );
 
 const product_failed = createAction(
   ProductAction.PRODUCT_FAILED,
-  props<{ error: any}>()
+  props<{ error: any }>()
 );
 
 export const ProductActions = {

@@ -4,7 +4,7 @@ import { ProductActions } from './products.actions';
 export const productFeatureKey = 'products';
 
 export interface ProductState {
-  product:any
+  product: any;
 }
 
 export const initialProductState: ProductState = {

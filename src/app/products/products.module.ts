@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductEffects } from './store';
 import { EffectsModule } from '@ngrx/effects';
+import { ProductsService } from './service/products.service';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -13,8 +14,12 @@ import { EffectsModule } from '@ngrx/effects';
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    StoreModule.forFeature(fromProducts.productFeatureKey, fromProducts.productReducer),
+    StoreModule.forFeature(
+      fromProducts.productFeatureKey,
+      fromProducts.productReducer
+    ),
     EffectsModule.forFeature([ProductEffects]),
   ],
+  providers: [ProductsService],
 })
 export class ProductsModule {}

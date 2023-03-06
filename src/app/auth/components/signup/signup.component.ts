@@ -11,10 +11,7 @@ import { AuthActions } from '../../store';
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup | any;
-  constructor(
-    private fb: FormBuilder,
-    private store: Store<AppState>
-  ) {}
+  constructor(private fb: FormBuilder, private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group(

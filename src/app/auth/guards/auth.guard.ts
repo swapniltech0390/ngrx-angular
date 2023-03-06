@@ -15,8 +15,8 @@ import { isLoggedIn } from '../store';
 export class AuthGuard implements CanActivate {
   constructor(private store: Store<AppState>,private router: Router) {}
   canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    _route: ActivatedRouteSnapshot,
+    _state: RouterStateSnapshot
   ):
     | boolean
     | UrlTree
